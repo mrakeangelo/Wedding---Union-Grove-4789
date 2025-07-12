@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B956D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B7553;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #2C3E50;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4A4063;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5A5073;
+}
+
+/* Custom animations */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Paper texture effect */
+.paper-texture {
+  position: relative;
+  background: linear-gradient(135deg, #FAF0E6 0%, #F5F1E8 100%);
+}
+
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(139, 149, 109, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(212, 165, 165, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* String lights effect */
+.string-lights {
+  position: relative;
+  overflow: hidden;
+}
+
+.string-lights::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #DAA520 50%, transparent 100%);
+}
+
+.string-lights::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 48px,
+    #DAA520 48px,
+    #DAA520 52px
+  );
+  background-size: 100px 10px;
+}
+
+/* Handwritten input styling */
+.handwritten-input {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #8B956D;
+  color: #4A4063;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.handwritten-input:focus {
+  outline: none;
+  border-bottom-color: #DAA520;
+  background: rgba(255, 248, 220, 0.3);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Polaroid effect */
+.polaroid {
+  background: white;
+  padding: 10px 10px 40px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid:nth-child(even):hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
